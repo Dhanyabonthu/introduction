@@ -10,12 +10,11 @@ import org.openqa.selenium.support.ui.Wait;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class CartPageDetails {
-
-	public static void main(String[] args) {
-		WebDriver driver=new ChromeDriver();
-		driver.manage().window().maximize();
-		driver.get("https://rahulshettyacademy.com/seleniumPractise/#/");
+	
+	public void additem(WebDriver driver)
+	{
 		List<WebElement> products=driver.findElements(By.cssSelector(".product-name"));
+		//driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 		
 	    
 		//System.out.println(products.size());
@@ -36,8 +35,13 @@ public class CartPageDetails {
 				
 					}
 		}
+	}
+
+	public static void main(String[] args) {
+		WebDriver driver=new ChromeDriver();
+		driver.manage().window().maximize();
+		driver.get("https://rahulshettyacademy.com/seleniumPractise/#/");
 		
-		driver.close();
 
 	}
 
